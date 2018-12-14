@@ -87,16 +87,33 @@
     </script>
 
 
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- ---------twiiter---------------- -->
+    <a id="twitter-button" class="btn btn-block btn-social btn-twitter">
+        <i class="fa fa-twitter"></i> Sign in with Twitter
+    </a>
+    <script>
+        $('#twitter-button').on('click', function() {
+            // Initialize with your OAuth.io app public key
+            OAuth.initialize('HwAr2OtSxRgEEnO2-JnYjsuA3tc');
+            // Use popup for OAuth
+            OAuth.popup('twitter').then(twitter => {
+                console.log('twitter:', twitter);
+                // Prompts 'welcome' message with User's email on successful login
+                // #me() is a convenient method to retrieve user data without requiring you
+                // to know which OAuth provider url to call
+                twitter.me().then(data => {
+                    console.log('data:', data);
+                    alert('Twitter says your email is:' + data.email +
+                        ".\nView browser 'Console Log' for more details");
+                });
+                // Retrieves user data from OAuth provider by using #get() and
+                // OAuth provider url    
+                twitter.get('/1.1/account/verify_credentials.json?include_email=true').then(data => {
+                    console.log('self data:', data);
+                })
+            });
+        })
+    </script>
 
 </body>
 
