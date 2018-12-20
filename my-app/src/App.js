@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
-
+import ImageComponents from "./imageComponents";
 class App extends Component {
   handleClick = () => {
     axios
@@ -23,8 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Hello world
-        <button onClick={this.handleClick}>login Twwiter</button>
+        <ImageComponents />
       </div>
     );
   }

@@ -11,6 +11,10 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -33,10 +37,96 @@
     <!-- gmail -->
     <meta name="google-signin-client_id" content="************">
 
+
+    <!-- google map -->
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
 </head>
 
 <body>
+    <!-- google map  -->
+    <!-- <div id="map"></div>
+    <script>
+        var map;
 
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: -34.397,
+                    lng: 150.644
+                },
+                zoom: 8
+            });
+        }
+    </script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+
+
+
+
+
+
+
+
+
+    <div role="listbox" aria-expanded="false" class="ui button floating labeled dropdown icon" tabindex="0">
+        <div class="text" role="alert" aria-live="polite">Filter Posts</div><i aria-hidden="true" class="filter icon"></i>
+        <div class="menu transition">
+            <div class="ui left icon input search"><input type="text" /><i aria-hidden="true" class="search icon"></i></div>
+            <div class="divider"></div>
+            <div class="header"><i aria-hidden="true" class="tags icon"></i>Tag Label</div>
+            <div class="scrolling menu transition">
+                <div role="option" class="item">
+                    <div class="ui red circular empty label"></div><span class="text">Important</span>
+                </div>
+                <div role="option" class="item">
+                    <div class="ui blue circular empty label"></div><span class="text">Announcement</span>
+                </div>
+                <div role="option" class="item">
+                    <div class="ui black circular empty label"></div><span class="text">Cannot Fix</span>
+                </div>
+                <div role="option" class="item">
+                    <div class="ui purple circular empty label"></div><span class="text">News</span>
+                </div>
+                <div role="option" class="item">
+                    <div class="ui orange circular empty label"></div><span class="text">Enhancement</span>
+                </div>
+                <div role="option" class="item">
+                    <div class="ui circular empty label"></div><span class="text">Change Declined</span>
+                </div>
+                <div role="option" class="item">
+                    <div class="ui yellow circular empty label"></div><span class="text">Off Topic</span>
+                </div>
+                <div role="option" class="item">
+                    <div class="ui pink circular empty label"></div><span class="text">Interesting</span>
+                </div>
+                <div role="option" class="item">
+                    <div class="ui green circular empty label"></div><span class="text">Discussion</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- facebook--------------- -->
 
     <br />
     <div class="fb-share-button" data-href="https://www.ddproperty.com/%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88/3873570-y-residence-113-%E0%B8%A7%E0%B8%B2%E0%B8%A2-%E0%B9%80%E0%B8%A3%E0%B8%AA%E0%B8%8B%E0%B8%B4%E0%B9%80%E0%B8%94%E0%B8%99%E0%B8%8B%E0%B9%8C-113"
