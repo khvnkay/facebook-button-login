@@ -54,11 +54,36 @@ class ImageComponents extends Component {
 
   render() {
     const settings = {
-      focusOnSelect: true,
+      className: "slider variable-width",
       infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      speed: 500
+      slidesToShow: 5,
+      slidesToScroll: 5,
+      variableWidth: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            infinite: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            initialSlide: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        }
+      ]
     };
     return (
       <div>
@@ -66,9 +91,9 @@ class ImageComponents extends Component {
         <Slider {...settings}>
           {_.map(tagOptions, v => {
             return (
-              <Container padded>
+              <div style={{ width: 160 }}>
                 <OneImage text={v.text} />
-              </Container>
+              </div>
             );
           })}
         </Slider>

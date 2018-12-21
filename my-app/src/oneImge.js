@@ -37,14 +37,14 @@ class OneImage extends Component {
         style={{
           position: "relative",
           display: "inline-block",
-          height: 300,
-          width: 200
+          height: 210,
+          width: 150
         }}
       >
         <Card>
           <Image
-            height={300}
-            width={200}
+            height={210}
+            width={150}
             color="teal"
             style={{ display: "block" }}
             src={img}
